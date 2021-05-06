@@ -40,7 +40,7 @@ window.onload = async function() {
         board.forEach(card => {
             img = document.createElement('img')
 
-            addClickBehavior(img)
+            addClickBehavior(img,card)
             addDblClickBehavior(img)
 
             img.src = img.src = `https://via.placeholder.com/150x150/000000/FFFFFF/?text=MisteryCard`
@@ -55,7 +55,7 @@ window.onload = async function() {
         })
     }
 
-    async function addClickBehavior(img) {
+    async function addClickBehavior(img,card) {
         img.addEventListener('click', (event) => {
                 if (event.target.class != "clicked"){
                     rand = Math.floor(Math.random() * 255);
@@ -75,6 +75,6 @@ window.onload = async function() {
             generate(game)
         })
     }
-    
+
     main()
 }
