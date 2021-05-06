@@ -30,23 +30,6 @@ window.onload = async function() {
         }
       return arr
     }
-    
-
-    async function generate(board){
-        board = await shuffleArray(board)
-        console.log(board)
-        let carpet = document.getElementById("carpet")
-        
-        board.forEach(card => {
-            img = document.createElement('img')
-
-            addClickBehavior(img,card)
-            addDblClickBehavior(img)
-
-            img.src = img.src = `https://via.placeholder.com/150x150/000000/FFFFFF/?text=MisteryCard`
-            carpet.appendChild(img)
-        })
-    }
 
     async function addDblClickBehavior(img) {
         img.addEventListener('dblclick', (event) => {
@@ -69,6 +52,22 @@ window.onload = async function() {
                 }
             })
         }
+     
+    async function generate(board){
+        board = await shuffleArray(board)
+        console.log(board)
+        let carpet = document.getElementById("carpet")
+        
+        board.forEach(card => {
+            img = document.createElement('img')
+
+            addClickBehavior(img,card)
+            addDblClickBehavior(img)
+
+            img.src = `https://via.placeholder.com/150x150/000000/FFFFFF/?text=MisteryCard`
+            carpet.appendChild(img)
+        })
+    }
 
     async function main(){
         await initGame().then(game => {
