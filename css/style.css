@@ -3,7 +3,13 @@ body {
     justify-content: center;
 }
 
+
 #carpet {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px 15px;
+    grid-template-rows:auto;
+    grid-template-columns: repeat(4, 15%);
     width: 950px;
     font-size: large;
     font-weight: bold;
